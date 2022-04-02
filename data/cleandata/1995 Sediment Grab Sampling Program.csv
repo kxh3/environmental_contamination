@@ -1,0 +1,62 @@
+,LOC_NAME,SAMPLE_DATE,TASK_CODE,ANALYTIC_METHOD,CAS_RN,CHEMICAL_NAME,REPORT_RESULT_VALUE,REPORT_RESULT_UNIT,REPORT_RESULT_LIMIT,DETECT_FLAG,REPORTABLE_RESULT,LONGITUDE,LATITUDE
+0,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,1746-01-6,"2,3,7,8-Tetrachlorodibenzo-p-dioxin",1.2,ug/kg,,Y,Yes,-74.127241,40.743027
+1,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,19408-74-3,"1,2,3,7,8,9-Hexachlorodibenzo-p-dioxin",0.019,ug/kg,,Y,Yes,-74.127241,40.743027
+2,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,30402-15-4,"Pentachlorinated Dibenzofurans, (Total)",1.0,ug/kg,,Y,Yes,-74.127241,40.743027
+3,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,3268-87-9,Octachlorodibenzo-p-dioxin,8.3,ug/kg,,Y,Yes,-74.127241,40.743027
+4,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,34465-46-8,"Hexachlorinated Dibenzo-p-dioxins, (Total)",0.22,ug/kg,,Y,Yes,-74.127241,40.743027
+5,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,35822-46-9,"1,2,3,4,6,7,8-Heptachlorodibenzo-p-dioxin",0.74,ug/kg,,Y,Yes,-74.127241,40.743027
+6,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,36088-22-9,"Pentachlorinated Dibenzo-p-dioxins, (Total)",0.0098,ug/kg,,Y,Yes,-74.127241,40.743027
+7,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,37871-00-4,"Heptachlorinated Dibenzo-p-dioxins, (Total)",1.6,ug/kg,,Y,Yes,-74.127241,40.743027
+8,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,38998-75-3,"Heptachlorinated Dibenzofurans, (Total)",1.5,ug/kg,,Y,Yes,-74.127241,40.743027
+9,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,39001-02-0,Octachlorodibenzofuran,1.6,ug/kg,,Y,Yes,-74.127241,40.743027
+10,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,39227-28-6,"1,2,3,4,7,8-Hexachlorodibenzo-p-dioxin",0.0089,ug/kg,,Y,Yes,-74.127241,40.743027
+11,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,40321-76-4,"1,2,3,7,8-Pentachlorodibenzo-p-dioxin",0.0098,ug/kg,,Y,Yes,-74.127241,40.743027
+12,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,41903-57-5,"Tetrachlorinated Dibenzo-p-dioxins, (Total)",1.3,ug/kg,,Y,Yes,-74.127241,40.743027
+13,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,51207-31-9,"2,3,7,8-Tetrachlorodibenzofuran",0.048,ug/kg,,Y,Yes,-74.127241,40.743027
+14,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,55673-89-7,"1,2,3,4,7,8,9-Heptachlorodibenzofuran",0.033,ug/kg,,Y,Yes,-74.127241,40.743027
+15,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,55684-94-1,"Hexachlorinated Dibenzofurans, (Total)",0.85,ug/kg,,Y,Yes,-74.127241,40.743027
+16,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,55722-27-5,"Tetrachlorinated Dibenzofurans, (Total)",1.5,ug/kg,,Y,Yes,-74.127241,40.743027
+17,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57117-31-4,"2,3,4,7,8-Pentachlorodibenzofuran",0.063,ug/kg,,Y,Yes,-74.127241,40.743027
+18,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57117-41-6,"1,2,3,7,8-Pentachlorodibenzofuran",0.028,ug/kg,,Y,Yes,-74.127241,40.743027
+19,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57117-44-9,"1,2,3,6,7,8-Hexachlorodibenzofuran",0.065,ug/kg,,Y,Yes,-74.127241,40.743027
+20,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57653-85-7,"1,2,3,6,7,8-Hexachlorodibenzo-p-dioxin",0.044,ug/kg,,Y,Yes,-74.127241,40.743027
+21,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,60851-34-5,"2,3,4,6,7,8-Hexachlorodibenzofuran",0.053,ug/kg,,Y,Yes,-74.127241,40.743027
+22,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,67562-39-4,"1,2,3,4,6,7,8-Heptachlorodibenzofuran",1.1,ug/kg,,Y,Yes,-74.127241,40.743027
+23,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,70648-26-9,"1,2,3,4,7,8-Hexachlorodibenzofuran",0.27,ug/kg,,Y,Yes,-74.127241,40.743027
+24,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,72918-21-9,"1,2,3,7,8,9-Hexachlorodibenzofuran",0.012,ug/kg,,Y,Yes,-74.127241,40.743027
+25,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,BBL-2378CONG,"Total 2,3,7,8-Congeners",13.6,ug/kg,,Y,Yes,-74.127241,40.743027
+26,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,BBL-TPCDDS,Total PCDDs,11.4,ug/kg,,Y,Yes,-74.127241,40.743027
+27,Grab-1,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,BBL-TPCDFS,Total PCDFs,6.45,ug/kg,,Y,Yes,-74.127241,40.743027
+28,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,1746-01-6,"2,3,7,8-Tetrachlorodibenzo-p-dioxin",0.21,ug/kg,,Y,Yes,-74.127245,40.74245
+29,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,19408-74-3,"1,2,3,7,8,9-Hexachlorodibenzo-p-dioxin",0.02,ug/kg,,Y,Yes,-74.127245,40.74245
+30,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,30402-15-4,"Pentachlorinated Dibenzofurans, (Total)",0.52,ug/kg,,Y,Yes,-74.127245,40.74245
+31,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,3268-87-9,Octachlorodibenzo-p-dioxin,9.4,ug/kg,,Y,Yes,-74.127245,40.74245
+32,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,34465-46-8,"Hexachlorinated Dibenzo-p-dioxins, (Total)",0.19,ug/kg,,Y,Yes,-74.127245,40.74245
+33,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,35822-46-9,"1,2,3,4,6,7,8-Heptachlorodibenzo-p-dioxin",0.73,ug/kg,,Y,Yes,-74.127245,40.74245
+34,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,36088-22-9,"Pentachlorinated Dibenzo-p-dioxins, (Total)",0.021,ug/kg,,Y,Yes,-74.127245,40.74245
+35,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,37871-00-4,"Heptachlorinated Dibenzo-p-dioxins, (Total)",1.6,ug/kg,,Y,Yes,-74.127245,40.74245
+36,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,38998-75-3,"Heptachlorinated Dibenzofurans, (Total)",1.4,ug/kg,,Y,Yes,-74.127245,40.74245
+37,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,39001-02-0,Octachlorodibenzofuran,1.2,ug/kg,,Y,Yes,-74.127245,40.74245
+38,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,39227-28-6,"1,2,3,4,7,8-Hexachlorodibenzo-p-dioxin",0.0093,ug/kg,,Y,Yes,-74.127245,40.74245
+39,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,40321-76-4,"1,2,3,7,8-Pentachlorodibenzo-p-dioxin",0.01,ug/kg,0.01,N,Yes,-74.127245,40.74245
+40,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,41903-57-5,"Tetrachlorinated Dibenzo-p-dioxins, (Total)",0.3,ug/kg,,Y,Yes,-74.127245,40.74245
+41,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,51207-31-9,"2,3,7,8-Tetrachlorodibenzofuran",0.03,ug/kg,,Y,Yes,-74.127245,40.74245
+42,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,55673-89-7,"1,2,3,4,7,8,9-Heptachlorodibenzofuran",0.029,ug/kg,,Y,Yes,-74.127245,40.74245
+43,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,55684-94-1,"Hexachlorinated Dibenzofurans, (Total)",0.73,ug/kg,,Y,Yes,-74.127245,40.74245
+44,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,55722-27-5,"Tetrachlorinated Dibenzofurans, (Total)",0.7,ug/kg,,Y,Yes,-74.127245,40.74245
+45,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57117-31-4,"2,3,4,7,8-Pentachlorodibenzofuran",0.049,ug/kg,,Y,Yes,-74.127245,40.74245
+46,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57117-41-6,"1,2,3,7,8-Pentachlorodibenzofuran",0.015,ug/kg,,Y,Yes,-74.127245,40.74245
+47,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57117-44-9,"1,2,3,6,7,8-Hexachlorodibenzofuran",0.056,ug/kg,,Y,Yes,-74.127245,40.74245
+48,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,57653-85-7,"1,2,3,6,7,8-Hexachlorodibenzo-p-dioxin",0.034,ug/kg,,Y,Yes,-74.127245,40.74245
+49,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,60851-34-5,"2,3,4,6,7,8-Hexachlorodibenzofuran",0.052,ug/kg,,Y,Yes,-74.127245,40.74245
+50,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,67562-39-4,"1,2,3,4,6,7,8-Heptachlorodibenzofuran",1.1,ug/kg,,Y,Yes,-74.127245,40.74245
+51,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,70648-26-9,"1,2,3,4,7,8-Hexachlorodibenzofuran",0.22,ug/kg,,Y,Yes,-74.127245,40.74245
+52,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,72918-21-9,"1,2,3,7,8,9-Hexachlorodibenzofuran",0.011,ug/kg,,Y,Yes,-74.127245,40.74245
+53,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,BBL-2378CONG,"Total 2,3,7,8-Congeners",13.2,ug/kg,,Y,Yes,-74.127245,40.74245
+54,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,BBL-TPCDDS,Total PCDDs,11.5,ug/kg,,Y,Yes,-74.127245,40.74245
+55,Grab-2,9/14/1995,1995 Sediment Grab Sampling Program,DDX/DDF,BBL-TPCDFS,Total PCDFs,4.55,ug/kg,,Y,Yes,-74.127245,40.74245
+56,Grab-3,9/14/1995,1995 Sediment Grab Sampling Program,E335.2,57-12-5,Cyanide,1340.0,ug/kg,,Y,Yes,-74.124182,40.741898
+57,Grab-4,9/14/1995,1995 Sediment Grab Sampling Program,E335.2,57-12-5,Cyanide,1120.0,ug/kg,,Y,Yes,-74.124178,40.742474
+58,Grab-5,9/14/1995,1995 Sediment Grab Sampling Program,E335.2,57-12-5,Cyanide,1200.0,ug/kg,,Y,Yes,-74.124464,40.74275
+59,Grab-6,9/14/1995,1995 Sediment Grab Sampling Program,E335.2,57-12-5,Cyanide,972.0,ug/kg,972.0,N,Yes,-74.123904,40.742874
+60,Grab-7,9/14/1995,1995 Sediment Grab Sampling Program,E335.2,57-12-5,Cyanide,1000.0,ug/kg,,Y,Yes,-74.124173,40.743026
