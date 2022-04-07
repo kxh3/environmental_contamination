@@ -65,13 +65,13 @@ def chemical_to_moles(df):
             return REPORT_RESULT_VALUE*conversion
 
 
-    df['SCALED_VALUE'] = df.apply(unit_conversion,axis=1)
+    df['VALUE_MUGRAM_PER_GRAM'] = df.apply(unit_conversion,axis=1)
 
     def value_moles(row):
-            CHEMICAL_NAME, SCALED_VALUE = row.CHEMICAL_NAME, row.SCALED_VALUE
+            CHEMICAL_NAME, VALUE_MUGRAM_PER_GRAM = row.CHEMICAL_NAME, row.VALUE_MUGRAM_PER_GRAM
             molar = molar_mass_dict[CHEMICAL_NAME]
 
-            return SCALED_VALUE / molar
+            return VALUE_MUGRAM_PER_GRAM / molar
 
     df['VALUE_MUMOL_PER_GRAM'] = df.apply(value_moles,axis=1)
 
