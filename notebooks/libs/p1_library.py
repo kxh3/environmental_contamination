@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import os
 
-###
+######
 
 def chemical_filter(file_path, chemical_list):
     chemical_data = []
@@ -18,8 +18,20 @@ def chemical_filter(file_path, chemical_list):
 
     return pd.concat(chemical_data)
 
+######
 
-###
+def clean_data_df(file_path):
+    clean_data = []
+
+    for filename in os.listdir(file_path):
+        if filename.endswith(".csv"):
+            csv_data = pd.read_csv(file_path + '/' + filename, parse_dates=True, infer_datetime_format=True)
+            clean_data.append(csv_data)
+
+    return pd.concat(clean_data)
+
+
+######
 
 def chemical_to_moles(df):
 
@@ -28,10 +40,33 @@ def chemical_to_moles(df):
             "Cyanide":26.02,
             "Dieldrin":380.91,
             "Hexachlorobiphenyl; 3,3',4,4',5,5'- (PCB 169)":360.878,
-            "Lead":207.2,
+            "Lead":207.20,
             "Mercury":200.59,
-            "Pentachlorobiphenyl; 3,3',4,4',5- (PCB 126)":326.433
-    }
+            "Pentachlorobiphenyl; 3,3',4,4',5- (PCB 126)":326.433,
+            "1,2-Dichlorobenzene":147.01,
+            "1,4-Dichlorobenzene":147.00,
+            "2-Chlorophenol":128.56,
+            "Chlorobenzene":112.56,
+            "p,p'-DDD":320.00,
+            "Benzene":78.11,
+            "Chloroform":119.38,
+            "Pentachlorobiphenyl; 2',3,4,4',5- (PCB 123)":326.40,
+            "p,p'-DDT":354.50,
+            "p,p'-DDE":318.02,
+            "Aldrin":364.90,
+            "Aroclor 1016":257.543,
+            "Aroclor 1221":188.653,
+            "Aroclor 1232":188.653,
+            "Aroclor 1242":260.57,
+            "Aroclor 1248":291.988,
+            "Aroclor 1254":326.40,
+            "Aroclor 1260":376,
+            "Pentachlorobiphenyl; 2,3,3',4,4'- (PCB 105)":326.40,
+            "Pentachlorobiphenyl; 2,3,3',4',6- (PCB 110)":326.40,
+            "Pentachlorobiphenyl; 2,3,4,4',5- (PCB 114)":326.40,
+            "Pentachlorobiphenyl; 2,3',4,4',5- (PCB 118)":323.883,
+            "Chromium":51.996
+        }
 
     conversion_factor_dict={
             'pg/g':10**-6,
@@ -50,9 +85,9 @@ def chemical_to_moles(df):
             'ng/l':10**-6,
             'ug/l':10**-3,
             'mg/l':1
-    }
-    df['REPORT_RESULT_UNIT'].fillna('ug/kg',inplace=True)
-    df.dropna(subset=['REPORT_RESULT_VALUE'],inplace=True)
+        }
+    
+    df.dropna(subset=['REPORT_RESULT_VALUE','REPORT_RESULT_UNIT'],inplace=True)
     df.isnull().sum()
 
     def unit_conversion(row):
