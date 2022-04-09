@@ -65,7 +65,9 @@ def chemical_to_moles(df):
             "Pentachlorobiphenyl; 2,3,3',4',6- (PCB 110)":326.40,
             "Pentachlorobiphenyl; 2,3,4,4',5- (PCB 114)":326.40,
             "Pentachlorobiphenyl; 2,3',4,4',5- (PCB 118)":323.883,
-            "Chromium":51.996
+            "Chromium":51.996,
+            "Benzo(a)pyrene":252.31,
+            "Copper":63.546
         }
 
     conversion_factor_dict={
@@ -191,7 +193,9 @@ molar_mass_dict={
         "Pentachlorobiphenyl; 2,3,3',4',6- (PCB 110)":326.40,
         "Pentachlorobiphenyl; 2,3,4,4',5- (PCB 114)":326.40,
         "Pentachlorobiphenyl; 2,3',4,4',5- (PCB 118)":323.883,
-        "Chromium":51.996
+        "Chromium":51.996,
+        "Benzo(a)pyrene":252.31,
+        "Copper":63.546
     }
 
 conversion_factor_dict={
@@ -212,3 +216,20 @@ conversion_factor_dict={
         'ug/l':10**-3,
         'mg/l':1
     }
+
+contaminant_list_8COCs = [
+ # Metals
+    "Copper",
+    "Lead",
+    "Mercury",
+ # Dioxin (example compound - worst in dioxin class)
+    "2,3,7,8-Tetrachlorodibenzo-p-dioxin",
+ # Dieldrin
+    "Dieldrin",
+ # DDT (example compound - most recognizable name in DDT class)
+    "p,p'-DDT",
+ # PAHs (example compound - worst in PAH class)
+    "Benzo(a)pyrene",
+ # PCBs (example compound - among the worst in PCB class)
+    "Pentachlorobiphenyl; 3,3',4,4',5- (PCB 126)"
+]
