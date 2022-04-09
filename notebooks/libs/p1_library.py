@@ -86,9 +86,11 @@ def chemical_to_moles(df):
             'ug/l':10**-3,
             'mg/l':1
         }
+
+    units_to_convert = list(conversion_factor_dict.keys())
     
     df.dropna(subset=['REPORT_RESULT_VALUE','REPORT_RESULT_UNIT'],inplace=True)
-    df.isnull().sum()
+    df = df[df['REPORT_RESULT_UNIT'].isin(units_to_convert)]
 
     def unit_conversion(row):
         REPORT_RESULT_VALUE, REPORT_RESULT_UNIT = row.REPORT_RESULT_VALUE, row.REPORT_RESULT_UNIT
@@ -110,6 +112,7 @@ def chemical_to_moles(df):
 
     df['VALUE_MUMOL_PER_GRAM'] = df.apply(value_moles,axis=1)
 
+    
     return df
 
 ######
