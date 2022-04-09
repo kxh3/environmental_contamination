@@ -111,3 +111,35 @@ def chemical_to_moles(df):
     df['VALUE_MUMOL_PER_GRAM'] = df.apply(value_moles,axis=1)
 
     return df
+
+######
+
+conversion_factor_dict={
+    'pg/g':10**-6,
+    'pg/sample':10**-6,
+    'ppt':10**-6,
+    'ppb':10**-3,
+    'ppm':1,
+    'ug/kg':10**-3,
+    'UMOLES/G':1,
+    'ng/g':10**-3,
+    'umol/g':1,
+    'mg/kg':1,
+    'ng/kg':10**-6,
+    'pg':10**-4,
+    'pg/l':10**-9,
+    'ng/l':10**-6,
+    'ug/l':10**-3,
+    'mg/l':1
+}
+
+def unit_conversion(row):
+
+    REPORT_RESULT_VALUE, REPORT_RESULT_UNIT = row.REPORT_RESULT_VALUE, row.REPORT_RESULT_UNIT
+    conversion = conversion_factor_dict[REPORT_RESULT_UNIT]
+
+    if REPORT_RESULT_UNIT == 'UMOLES/G' or REPORT_RESULT_UNIT == 'umol/g':
+        return REPORT_RESULT_VALUE**2
+    else:
+        return REPORT_RESULT_VALUE*conversion
+
