@@ -172,7 +172,7 @@ conversion_factor_dict={
             'umol/g':1,
             'mg/kg':1,
             'ng/kg':10**-6,
-            'pg':10**-4,
+            'pg':10**-6,
             'pg/l':10**-9,
             'ng/l':10**-6,
             'ug/l':10**-3,
@@ -291,6 +291,7 @@ def call_8coc_df(filepath):
     subset8_df = subset8_df.fillna('0')
     # Add sampling year
     subset8_df['SAMPLE_YEAR'] = pd.to_datetime(subset8_df['SAMPLE_DATE']).dt.year
+    subset8_df['SAMPLE_YEAR_MONTH'] = pd.to_datetime(subset8_df['SAMPLE_DATE']).dt.strftime('%Y-%m')
     return subset8_df
 
 # Call Average Sample Value at Location Individual Dataframe for each of 8 COCs
@@ -306,19 +307,17 @@ def call_coc_density_df(subset8_df, coc):
 # FUNCTIONS FOR VISUALS
 
 # Create Line Plot of 8 COCs
-def lineplot_8cocs(subset8_df):
-    subset8_df['SAMPLE_DATE'] = pd.to_datetime(subset8_df['SAMPLE_DATE'],utc=True)
-    subset8_df['SAMPLE_YEAR_MONTH'] = subset8_df['SAMPLE_DATE'].dt.strftime('%Y-%m')
-    subset8_df.drop('SAMPLE_DATE',axis=1,inplace=True)
-    subset8_grouped = subset8_df.groupby(['SAMPLE_YEAR_MONTH','CHEMICAL_NAME']).mean()
-    eight_coc_lineplot = subset8_grouped['REPORT_RESULT_LIMIT'].hvplot.line(
-        x='SAMPLE_YEAR_MONTH',
-        groupby='CHEMICAL_NAME',
-        title='Volatile Chemical Measurements in the Passaic River Basin',
-        xlabel='sample year and month',
-        ylabel='average concentration (ug/g)',
-        rot=90)
-    return eight_coc_lineplot
+#def lineplot_8cocs(subset8_df):
+#    subset8_grouped = subset8_df.groupby(['SAMPLE_YEAR_MONTH','CHEMICAL_NAME']).mean()
+#    subset8_grouped.fillna('0')
+#    eight_coc_lineplot = subset8_grouped['REPORT_RESULT_VALUE'].hvplot.line(
+#        x='SAMPLE_YEAR_MONTH',
+#        groupby='CHEMICAL_NAME',
+#        title='Volatile Chemical Measurements in the Passaic River Basin',
+#        xlabel='sample year and month',
+#        ylabel='average concentration (ug/g)',
+#        rot=90)
+#    return eight_coc_lineplot
 
 # Industry Dataframe
 industry_filepath = '../notebooks/libs/clean_industry_coordinates.csv'
@@ -406,7 +405,7 @@ pah_density_df = call_coc_density_df(subset8_df, "pah")
 pcb_density_df = call_coc_density_df(subset8_df, "pcb")
 
 # Line Plot
-eight_coc_lineplot = lineplot_8cocs(subset8_df)
+#eight_coc_lineplot = lineplot_8cocs(subset8_df)
 
 # Industry Figure
 industry_fig = call_industry_figure(industry_df)
