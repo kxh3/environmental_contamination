@@ -294,6 +294,17 @@ def call_8coc_df(filepath):
     subset8_df['SAMPLE_YEAR_MONTH'] = pd.to_datetime(subset8_df['SAMPLE_DATE']).dt.strftime('%Y-%m')
     return subset8_df
 
+# Create 30 COC Dataframe
+def call_30_df(filepath):
+    subset30_df = chemical_filter(filepath, contaminant_list_30)
+    # Convert all values to standardized measurements
+    subset30_df = chemical_to_moles(subset30_df)
+    subset30_df = subset30_df.fillna('0')
+    # Add sampling year
+    subset30_df['SAMPLE_YEAR'] = pd.to_datetime(subset30_df['SAMPLE_DATE']).dt.year
+    subset30_df['SAMPLE_YEAR_MONTH'] = pd.to_datetime(subset30_df['SAMPLE_DATE']).dt.strftime('%Y-%m')
+    return subset30_df
+
 # Call Average Sample Value at Location Individual Dataframe for each of 8 COCs
 def call_coc_density_df(subset8_df, coc):
     coc_df = subset8_df[subset8_df['CHEMICAL_NAME'] == eight_coc_dict[coc]]
@@ -307,17 +318,17 @@ def call_coc_density_df(subset8_df, coc):
 # FUNCTIONS FOR VISUALS
 
 # Create Line Plot of 8 COCs
-#def lineplot_8cocs(subset8_df):
-#    subset8_grouped = subset8_df.groupby(['SAMPLE_YEAR_MONTH','CHEMICAL_NAME']).mean()
-#    subset8_grouped.fillna('0')
-#    eight_coc_lineplot = subset8_grouped['REPORT_RESULT_VALUE'].hvplot.line(
-#        x='SAMPLE_YEAR_MONTH',
-#        groupby='CHEMICAL_NAME',
-#        title='Volatile Chemical Measurements in the Passaic River Basin',
-#        xlabel='sample year and month',
-#        ylabel='average concentration (ug/g)',
-#        rot=90)
-#    return eight_coc_lineplot
+def lineplot_8cocs(subset8_df):
+    subset8_grouped = subset8_df.groupby(['SAMPLE_YEAR_MONTH','CHEMICAL_NAME']).mean()
+    subset8_grouped.fillna('0')
+    eight_coc_lineplot = subset8_grouped['REPORT_RESULT_VALUE'].hvplot.line(
+        x='SAMPLE_YEAR_MONTH',
+        groupby='CHEMICAL_NAME',
+        title='Volatile Chemical Measurements in the Passaic River Basin',
+        xlabel='sample year and month',
+        ylabel='average concentration (ug/g)',
+        rot=90)
+    return eight_coc_lineplot
 
 # Industry Dataframe
 industry_filepath = '../notebooks/libs/clean_industry_coordinates.csv'
@@ -339,7 +350,16 @@ def call_industry_figure(industry_df):
         width=1200,
         color='Main_Contaminant _Category',
         hover_data=['Description_of_Operations', 'Site_Operator'])
-        #animation_frame= 'Main_Contaminant _Category'
+    
+    industry_fig.update_mapboxes(
+        bearing=0,
+        accesstoken=map_box_api,
+        center=dict(
+            lat=40.757,
+            lon=-74.146
+        ),
+        pitch=0,
+        zoom=12)
 
     return industry_fig
 
@@ -366,12 +386,34 @@ def coc_density_plot(coc_density_df, radius):
     lon='LONGITUDE',
     zoom=12,
     height=1000,
-    width=1000,
+    width=1200,
     z="VALUE_MUMOL_PER_GRAM",
     radius=radius,
     hover_data=['CHEMICAL_NAME', 'VALUE_MUMOL_PER_GRAM']
     )
     return coc_fig
+
+# Special Industry Plot with Markers Written On
+def label_industry_fig():
+    lats = industry_df['Latitude']
+    lons = industry_df['Longitude']
+    text = industry_df['Site_Operator']
+
+    fig = go.Figure(go.Scattermapbox(lat=lats,
+                                       lon=lons,
+                                       mode='text+markers',
+                                       text=text,
+                                       textposition='top center',
+                                       marker_size=12, marker_color='red'))
+    fig.update_layout(title_text ='Historic Industry and Operations', 
+                          title_x =0.5, 
+                          width=1000, 
+                          height=1200,
+                          mapbox = dict(center= dict(lat=40.757, lon=-74.146),
+                                        accesstoken=map_box_api,
+                                        zoom=12,
+                                        style="light"))
+    return(fig)
 
 # Overlay Figures
 def overlay_coc_industry_figure(industry_fig, coc_fig):
@@ -379,9 +421,43 @@ def overlay_coc_industry_figure(industry_fig, coc_fig):
     industry_coc_fig = industry_fig.add_trace(coc_fig.data[0])
     return industry_coc_fig
 
+# Line Plot for 30 COCs
+
+def avg_30_df(filepath):
+    subset30_df = call_30_df(filepath)
+    more_filtered_columns = subset30_df[["SAMPLE_YEAR","CHEMICAL_NAME", "VALUE_MUMOL_PER_GRAM"]]
+    mean_concentrations_set30 = more_filtered_columns.groupby(["SAMPLE_YEAR","CHEMICAL_NAME"]).mean()
+    return mean_concentrations_set30
+
+def average_concentration_bar():
+    concentration_bar_plot = mean_concentrations_set30["VALUE_MUMOL_PER_GRAM"].hvplot.bar(
+        x='SAMPLE_YEAR', 
+        y='VALUE_MUMOL_PER_GRAM', 
+        xlabel='Year', 
+        ylabel='Average Concentration (umol/g)', 
+        title= 'Average Concentration By Year', 
+        groupby='CHEMICAL_NAME')
+    return concentration_bar_plot
+
+def average_concentration_line():
+    concentration_line_plot = mean_concentrations_set30["VALUE_MUMOL_PER_GRAM"].hvplot.line(
+        x='SAMPLE_YEAR', 
+        y='VALUE_MUMOL_PER_GRAM', 
+        xlabel='Year', 
+        ylabel='Average Concentration (umol/g)', 
+        title= 'Average Concentration By Year', 
+        groupby='CHEMICAL_NAME')
+    return concentration_line_plot
+
+
 
 # STOCK VARIABLES
 filepath = '../data/cleandata'
+
+# Line Plots
+mean_concentrations_set30 = avg_30_df(filepath)
+subset30_bar = average_concentration_bar()
+subset30_line = average_concentration_line()
 
 # 8 COC full dataframe and individual dataframes
 subset8_df = call_8coc_df(filepath)
@@ -405,7 +481,24 @@ pah_density_df = call_coc_density_df(subset8_df, "pah")
 pcb_density_df = call_coc_density_df(subset8_df, "pcb")
 
 # Line Plot
-#eight_coc_lineplot = lineplot_8cocs(subset8_df)
+eight_coc_lineplot = lineplot_8cocs(subset8_df)
+
+# Labeled Industry Figure
+industry_label_fig = label_industry_fig()
+coc_scatter_fig = px.scatter_mapbox(
+    subset8_df,
+    lat="LATITUDE",
+    lon="LONGITUDE",
+    size="VALUE_MUMOL_PER_GRAM",
+    size_max=50, 
+    zoom=12,
+    height=1000,
+    width=1200,
+    title='Eight Contaminants of Concern',
+    color="CHEMICAL_NAME",
+    hover_data=["SAMPLE_DATE"],
+)
+industry_all_coc_fig = overlay_coc_industry_figure(coc_scatter_fig, industry_label_fig)
 
 # Industry Figure
 industry_fig = call_industry_figure(industry_df)
